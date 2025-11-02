@@ -1,8 +1,10 @@
+-- Tải UI-Redz-V2
 loadstring(game:HttpGet("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V2/refs/heads/main/UiREDzV2.lua"))()
 
+-- Tạo cửa sổ hub mới
 local Window = MakeWindow({
     Hub = {
-        Title = "Linh tinh | Chat gpt support",
+        Title = "🐕 Shiba Skybox | Soliar Addon",
         Animation = "✨ Loading..."
     },
     Key = {
@@ -17,7 +19,7 @@ local Tab = Window:MakeTab({
 })
 
 local Lighting = game:GetService("Lighting")
-local shibaId = "rbxassetid://15422943858"
+local shibaId = "rbxassetid://15422943858" -- Ảnh Shiba mềm
 local skyInstance = nil
 
 local function EnableSky()
@@ -41,16 +43,17 @@ local function DisableSky()
     end
 end
 
+-- Nút bật/tắt skybox
 Tab:AddToggle({
     Name = "🦊 Bật / Tắt Shiba Skybox",
     Default = false,
     Callback = function(state)
         if state then
             EnableSky()
-            Notify("✅ Đã bật skybox Shiba mềm!")
+            Notify({Title = "Shiba Skybox", Content = "✅ Đã bật skybox Shiba mềm!"})
         else
             DisableSky()
-            Notify("❌ Đã tắt skybox Shiba.")
+            Notify({Title = "Shiba Skybox", Content = "❌ Đã tắt skybox Shiba."})
         end
     end
 })
